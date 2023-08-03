@@ -1,3 +1,13 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "sort-imports": "error",
+    "no-unused-expressions": "error",
+    "no-unused-vars": "error",
+    "prefer-const": "error",
+    "no-console": "warn",
+    "no-trailing-spaces": "error",
+    "newline-before-return": "error",
+    "brace-style": "error"
+  }
 }
