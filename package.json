@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "lint-staged",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@types/node": "20.4.6",
@@ -23,5 +24,8 @@
     "eslint-plugin-react": "7.28.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3"
+  },
+  "lint-staged": {
+    "*.ts": "eslint --fix"
   }
 }
