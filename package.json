@@ -24,8 +24,5 @@
     "eslint-plugin-react": "7.28.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3"
-  },
-  "lint-staged": {
-    "*.ts": "eslint --fix"
   }
 }
