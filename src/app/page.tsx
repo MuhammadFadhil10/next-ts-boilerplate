@@ -4,6 +4,7 @@ import { B } from "./B";
 export default function Home() {
   const a = 20;
   const b = 1;
+  const c = 5;
 
   return (
     <main>
