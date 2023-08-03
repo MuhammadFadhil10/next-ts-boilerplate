@@ -1,8 +1,8 @@
+import { AuthOptions, Session } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import NextAuth from "next-auth";
-import { Session } from "next-auth";
 
-export const handler = NextAuth({
+export const authOptions: AuthOptions = {
   // Configure one or more authentication providers
   providers: [
     GoogleProvider({
@@ -11,6 +11,9 @@ export const handler = NextAuth({
     }),
     // ...add more providers here
   ],
+  pages: {
+    signIn: "/auth/signin",
+  },
 
   callbacks: {
     async jwt({ token, account }) {
@@ -30,7 +33,14 @@ export const handler = NextAuth({
 
       return customSession;
     },
+    async redirect({ url }) {
+      url = "/";
+
+      return url;
+    },
   },
-});
+};
+
+export const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };
