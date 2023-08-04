@@ -1,7 +1,7 @@
 // "use client";
 
-import { SignOutButton } from "@/components";
-import WithAuthPage from "@/components/utils/WithAuthPage";
+import { SignOutButton } from "@/features";
+import WithAuthPage from "@/features/components/utils/WithAuthPage";
 
 export default function Home() {
   return (
