@@ -2,7 +2,7 @@
 
 import "./globals.css";
 import { SessionProvider } from "next-auth/react";
-import { WithAuth } from "@/components";
+// import { WithAuth } from "@/components";
 
 export default function RootLayout({
   children,
@@ -12,9 +12,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <SessionProvider>
-        <WithAuth>
-          <body>{children}</body>
-        </WithAuth>
+        {/* <WithAuth> */}
+        <body>{children}</body>
+        {/* </WithAuth> */}
       </SessionProvider>
     </html>
   );

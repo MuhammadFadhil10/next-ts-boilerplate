@@ -1,15 +1,18 @@
-"use client";
+// "use client";
 
-import { signOut } from "next-auth/react";
+import { SignOutButton } from "@/components";
+import WithAuthPage from "@/components/utils/WithAuthPage";
 
 export default function Home() {
   return (
-    <main>
-      <div>
-        <h1>Your boilerplate!</h1>
+    <WithAuthPage>
+      <main>
+        <div>
+          <h1>Your boilerplate!</h1>
 
-        <button onClick={() => signOut()}>Sign out</button>
-      </div>
-    </main>
+          <SignOutButton />
+        </div>
+      </main>
+    </WithAuthPage>
   );
 }
