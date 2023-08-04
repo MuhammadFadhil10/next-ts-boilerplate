@@ -18,16 +18,19 @@ export default function Page() {
 
   return (
     <>
-      <h1>Signin page</h1>
+      {providers && (
+        <>
+          <h1>Signin page</h1>
 
-      {providers &&
-        Object.values(providers).map((provider) => (
-          <div key={provider.name}>
-            <button onClick={() => signIn(provider.id)}>
-              Sign in with {provider.name}
-            </button>
-          </div>
-        ))}
+          {Object.values(providers).map((provider) => (
+            <div key={provider.name}>
+              <button onClick={() => signIn(provider.id)}>
+                Sign in with {provider.name}
+              </button>
+            </div>
+          ))}
+        </>
+      )}
     </>
   );
 }
