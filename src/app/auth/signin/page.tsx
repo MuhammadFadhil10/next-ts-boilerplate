@@ -23,11 +23,9 @@ export default function Page() {
           <h1>Signin page</h1>
 
           {Object.values(providers).map((provider) => (
-            <div key={provider.name}>
-              <button onClick={() => signIn(provider.id)}>
-                Sign in with {provider.name}
-              </button>
-            </div>
+            <button key={provider.name} onClick={() => signIn(provider.id)}>
+              Sign in with {provider.name}
+            </button>
           ))}
         </>
       )}
