@@ -1,20 +1,11 @@
 "use client";
 
 import * as React from "react";
-import { ClientSafeProvider, getProviders, signIn } from "next-auth/react";
+import { signIn } from "next-auth/react";
+import { useAuth } from "@/features";
 
 export default function Page() {
-  const [providers, setProviders] = React.useState<ClientSafeProvider>();
-
-  const getDataProviders = React.useCallback(async () => {
-    const data = await getProviders();
-
-    setProviders(data as unknown as ClientSafeProvider);
-  }, []);
-
-  React.useEffect(() => {
-    getDataProviders();
-  }, [getDataProviders]);
+  const { providers } = useAuth();
 
   return (
     <>
