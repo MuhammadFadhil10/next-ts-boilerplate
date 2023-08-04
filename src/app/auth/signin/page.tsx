@@ -1,11 +1,22 @@
 "use client";
 
 import * as React from "react";
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import { useAuth } from "@/features";
+import { useRouter } from "next/navigation";
 
 export default function Page() {
   const { providers } = useAuth();
+  const { push } = useRouter();
+  const { status } = useSession();
+
+  if (status === "loading") {
+    return <></>;
+  }
+
+  if (status === "authenticated") {
+    push("/");
+  }
 
   return (
     <>
