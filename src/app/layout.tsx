@@ -1,13 +1,16 @@
-import './globals.css'
+import "./globals.css";
+import MuiThemeProvider from "@/providers/MuiThemeProvider";
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <MuiThemeProvider>
+        <body>{children}</body>
+      </MuiThemeProvider>
     </html>
-  )
+  );
 }
